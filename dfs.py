@@ -26,7 +26,8 @@ def dfs(vertex, graph):
 
 	for w in g[v]['neighbours']:
 		if g[w]['colour'] is 'white':
-			dfs(w, g)
+			g = dfs(w, g)
+
 	return g
 
 
