@@ -1,6 +1,6 @@
 # DEPTH-FIRST-SEARCH
 
-# The algorighm
+# The algorithm
 # ------------------------------------------------------
 # set the colour of v to black
 # ITERATE over all w that are neighbours of v
