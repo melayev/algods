@@ -20,6 +20,8 @@ def dfs(vertex, graph):
 	v = vertex
 	g = graph
 
+	print( "Visited: ", v)
+
 	g[v]['colour'] = 'black'
 
 	for w in g[v]['neighbours']:
@@ -36,4 +38,5 @@ graph1 = {
 	5 : { 'colour' : 'white', 'neighbours' : [2]}
 }
 
+print( graph1 )
 print( dfs(3, graph1) )
