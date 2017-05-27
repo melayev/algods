@@ -8,6 +8,13 @@
 # 		depth first search of G from w
 # ------------------------------------------------------
 
+def dfs(v, g):
+	g[v]['colour'] = 'black'
+	for w in g[v]['neighbours']:
+		if g[w]['colour'] is 'white':
+			dfs(w, g)
+
+
 # An algorithm traversing the vertices of a graph needs 
 # some way in which to detect when a vertex has already 
 # been visited, or it might continue endlessly revisiting 
@@ -16,7 +23,7 @@
 # vertex a colour, white or black. Unvisited vertices are 
 # coloured white. When a vertex is visited, its colour is 
 # changed to black and black vertices are not revisited.
-def dfs(vertex, graph):
+def chatty_dfs(vertex, graph):
 	v = vertex
 	g = graph
 
@@ -26,7 +33,7 @@ def dfs(vertex, graph):
 
 	for w in g[v]['neighbours']:
 		if g[w]['colour'] is 'white':
-			g = dfs(w, g)
+			g = chatty_dfs(w, g)
 
 	return g
 
@@ -40,4 +47,4 @@ graph1 = {
 }
 
 print( graph1 )
-print( dfs(3, graph1) )
+print( chatty_dfs(3, graph1) )
