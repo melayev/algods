@@ -1,5 +1,12 @@
 # DEPTH-FIRST-SEARCH
 
+# A graph is searched depth first by visiting an initial
+# vertex and then visiting one of its neighbours. After
+# visiting this neighbour you visit one of its neighbours
+# and so on. If you come to a vertex with no neighbors you
+# backtrack one stage and visit another neighbour of the 
+# previous vertex.
+
 # The algorithm
 # ------------------------------------------------------
 # set the colour of v to black
