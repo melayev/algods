@@ -21,8 +21,8 @@ infinity = 100 # :) oh well that's the world we're are living in here
 graph1 = {
 	'u': { 'dist': infinity, 'edgeTo': { 'v': 1, 'w': 2 }},
 	'v': { 'dist': infinity, 'edgeTo': { 'u': 1, 'x': 2, 'y': 5, 'z': 6 }},
-	'w': { 'dist': infinity, 'edgeTo': { 'u': 2, 'x': 2, 'z': 4}},
-	'x': { 'dist': infinity, 'edgeTo': { 'v': 6, 'w': 2, 'y': 3}},
+	'w': { 'dist': infinity, 'edgeTo': { 'u': 2, 'x': 2, 'z': 4 }},
+	'x': { 'dist': infinity, 'edgeTo': { 'v': 6, 'w': 2, 'y': 3 }},
 	'y': { 'dist': infinity, 'edgeTo': { 'x': 3, 'v': 5, 'z': 1 }},
 	'z': { 'dist': infinity, 'edgeTo': { 'v': 6, 'w': 4, 'y': 1 }}
 }
