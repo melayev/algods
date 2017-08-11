@@ -1,6 +1,6 @@
 # BREADTH-FIRST-SEARCH
 
-# Visit and initial vertex, and then visit every one of its
+# Visit an initial vertex, and then visit every one of its
 # neighbours. Only when every neighbour vertex has been 
 # visited then move to a neighbour of a neighbour. Each time
 # the seach comes to a new vertex it visits all of its
