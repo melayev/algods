@@ -33,7 +33,7 @@ def bfs(v, g):
 				queue.append(w)	
 
 
-# The idea is that we keep a todo list of vertices we are 
+# The idea is that we keep a todo list of vertices that we are 
 # aware of but have not visited yet. The list is a queue so
 # the next vertex to visit, will always be at the front of 
 # the queue. As in DFS, we colour the vercies but in BFS 
