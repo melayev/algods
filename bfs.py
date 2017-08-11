@@ -40,7 +40,7 @@ def bfs(v, g):
 # there are three colours:
 # 	- black for a vertex that has been visited
 # 	- grey for a vertex waiting to be visitied
-#	- while for a vertex we have not reached yet
+#	- white for a vertex we have not reached yet
 # While the todo list is not empty, we repeat these steps:
 # 	- Remove the vertex at the front of the queue
 # 	- Locate its neighbours. Those coloured white are 
