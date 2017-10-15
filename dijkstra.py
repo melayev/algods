@@ -7,24 +7,24 @@
 # set dist to 0 for v and dist to infinity for all other vertices
 # add all vertices to priority queue
 # ITERATE whilte priority queue is not empty
-# 	remove u from the front of the queue
-# 	ITERATE over w in the neighbours of u
-# 		set new distance to dist u + length of edge from u to w
-# 		IF new distance is less than distw
-#			set dist w to new distance
-#			change priority(w, new distance)
+#   remove u from the front of the queue
+#   ITERATE over w in the neighbours of u
+#       set new distance to dist u + length of edge from u to w
+#       IF new distance is less than distw
+#           set dist w to new distance
+#           change priority(w, new distance)
 
 from priorityqueue import PriorityQueue
 
-infinity = 100 # :) oh well that's the world we're are living in here
+infinity = float('infinity')
 
 graph1 = {
-	'u': { 'dist': infinity, 'edgeTo': { 'v': 1, 'w': 2 }},
-	'v': { 'dist': infinity, 'edgeTo': { 'u': 1, 'x': 2, 'y': 5, 'z': 6 }},
-	'w': { 'dist': infinity, 'edgeTo': { 'u': 2, 'x': 2, 'z': 4 }},
-	'x': { 'dist': infinity, 'edgeTo': { 'v': 6, 'w': 2, 'y': 3 }},
-	'y': { 'dist': infinity, 'edgeTo': { 'x': 3, 'v': 5, 'z': 1 }},
-	'z': { 'dist': infinity, 'edgeTo': { 'v': 6, 'w': 4, 'y': 1 }}
+    'u': { 'dist': infinity, 'edgeTo': { 'v': 1, 'w': 2 }},
+    'v': { 'dist': infinity, 'edgeTo': { 'u': 1, 'x': 2, 'y': 5, 'z': 6 }},
+    'w': { 'dist': infinity, 'edgeTo': { 'u': 2, 'x': 2, 'z': 4 }},
+    'x': { 'dist': infinity, 'edgeTo': { 'v': 2, 'w': 2, 'y': 3 }},
+    'y': { 'dist': infinity, 'edgeTo': { 'x': 3, 'v': 5, 'z': 1 }},
+    'z': { 'dist': infinity, 'edgeTo': { 'v': 6, 'w': 4, 'y': 1 }}
 }
 
 
@@ -41,37 +41,37 @@ graph1 = {
 # all the others) so it will be at the front.
 #
 # While the priority queue is not empty we repeat these steps
-# 	- Remove the vertex at the front of the queue
-# 	- Locate its neighbours. For each neighbour, compute a new distance by 
-# 		adding together the base distance and the length of the edge going to 
-# 		that neightbour
-# 	- If the new distance is less than the neightbour's current distance, we 
-# 		have found a shorter path to the neighbour. So replace the neighbour's 
-#		distance with the new distance
+#   - Remove the vertex at the front of the queue
+#   - Locate its neighbours. For each neighbour, compute a new distance by 
+#       adding together the base distance and the length of the edge going to 
+#       that neightbour
+#   - If the new distance is less than the neighbour's current distance, we 
+#       have found a shorter path to the neighbour. So replace the neighbour's 
+#       distance with the new distance
 
 def dijkstra(source, graph):
-	pQueue = PriorityQueue()
-	graph[source]['dist'] = 0
+    pQueue = PriorityQueue()
+    graph[source]['dist'] = 0
 
-	for v in graph:
-		pQueue.enqueue((graph[v]['dist'], v))
+    for v in graph:
+        pQueue.enqueue((graph[v]['dist'], v), infinity)
 
-	while not pQueue.isEmpty():
-		u = pQueue.dequeue()
-		baseDist = graph[u]['dist']
-		for w in graph[u]['edgeTo']:
-			edgeLen = graph[u]['edgeTo'][w]
-			newDist = baseDist + edgeLen
-			currentDist = graph[w]['dist']
-			if newDist < currentDist:
-				graph[w]['dist'] = newDist
-				pQueue.changePriority(w, newDist)
+    while not pQueue.isEmpty():
+        u = pQueue.dequeue()
+        baseDist = graph[u]['dist']
+        for w in graph[u]['edgeTo']:
+            edgeLen = graph[u]['edgeTo'][w]
+            newDist = baseDist + edgeLen
+            currentDist = graph[w]['dist']
+            if newDist < currentDist:
+                graph[w]['dist'] = newDist
+                pQueue.changePriority(w, newDist)
 
-	distanceList = []
-	for v in graph:
-		distanceList.append((v, graph[v]['dist']))
+    distanceList = []
+    for v in graph:
+        distanceList.append((v, graph[v]['dist']))
 
-	return distanceList
+    return distanceList
 
 
 print( "Distance from 'u' to other vertices:" )
