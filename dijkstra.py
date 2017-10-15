@@ -6,7 +6,7 @@
 # create priority queue
 # set dist to 0 for v and dist to infinity for all other vertices
 # add all vertices to priority queue
-# ITERATE whilte priority queue is not empty
+# ITERATE while priority queue is not empty
 #   remove u from the front of the queue
 #   ITERATE over w in the neighbours of u
 #       set new distance to dist u + length of edge from u to w
@@ -37,7 +37,7 @@ graph1 = {
 # from itself). We have no information yet about the other distances, so we 
 # set them all to some suitably large value, conventionally called 'infinity'.
 # We then add all the vertices to a priority queue, sorted by currrent 
-# distance, The sourcehas the smallest distance (zero versus infinity for 
+# distance, The source has the smallest distance (zero versus infinity for 
 # all the others) so it will be at the front.
 #
 # While the priority queue is not empty we repeat these steps
