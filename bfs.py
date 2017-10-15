@@ -1,6 +1,6 @@
 # BREADTH-FIRST-SEARCH
 
-# Visit and initial vertex, and then visit every one of its
+# Visit an initial vertex, and then visit every one of its
 # neighbours. Only when every neighbour vertex has been 
 # visited then move to a neighbour of a neighbour. Each time
 # the seach comes to a new vertex it visits all of its
@@ -33,14 +33,14 @@ def bfs(v, g):
 				queue.append(w)	
 
 
-# The idea is that we keep a todo list of vertices we are 
+# The idea is that we keep a todo list of vertices that we are 
 # aware of but have not visited yet. The list is a queue so
 # the next vertex to visit, will always be at the front of 
 # the queue. As in DFS, we colour the vercies but in BFS 
 # there are three colours:
 # 	- black for a vertex that has been visited
 # 	- grey for a vertex waiting to be visitied
-#	- while for a vertex we have not reached yet
+#	- white for a vertex we have not reached yet
 # While the todo list is not empty, we repeat these steps:
 # 	- Remove the vertex at the front of the queue
 # 	- Locate its neighbours. Those coloured white are 
