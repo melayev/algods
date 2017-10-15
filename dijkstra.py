@@ -54,7 +54,7 @@ def dijkstra(source, graph):
     graph[source]['dist'] = 0
 
     for v in graph:
-        pQueue.enqueue((graph[v]['dist'], v), infinity)
+        pQueue.enqueue(v, infinity)
 
     while not pQueue.isEmpty():
         u = pQueue.dequeue()

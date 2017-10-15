@@ -14,7 +14,7 @@ class PriorityQueue:
         heapq.heappush(self._queue, (priority, item))
 
     def dequeue(self):
-        return heapq.heappop(self._queue)[-1][1]
+        return heapq.heappop(self._queue)[-1]
 
     def changePriority(self, item, priority):
         i = 0
