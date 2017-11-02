@@ -1,2 +1,2 @@
 # Algorithms and Data Structures 
-Pushing things here done during my evening katas
+Implementations done during my evening katas
